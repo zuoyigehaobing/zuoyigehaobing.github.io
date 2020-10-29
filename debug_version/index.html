@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Bingzhao Shan, 单炳钊">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bingzhao Shan</title>
+    <link rel="icon" href="static/images/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="navbar" id="navbar">
+        <div class="navi-logo">
+
+            <a href="#"><img src="static/images/icon.png" alt="Umich" id="NaviLogo"><span>Shan</span></a>
+        </div>
+        <!-- <div class="navi-logo">
+            <a href="#"><img src="static/images/icon.png" alt="Umich" id="NaviLogo">Shan</a>
+        </div> -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#publications">Publication</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#working">Working</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+            </ul>
+            <script>
+                $("nav a").on('click', function (event) {
+                    event.preventDefault();
+
+                    if ($(this).attr("href") === "#"){
+                        window.scrollTo(0, 0);
+                    }else{
+                        var o =  $( $(this).attr("href") ).offset();   
+                        var sT = o.top - $(".navbar").outerHeight(true); // get the fixedbar height
+                        // compute the correct offset and scroll to it.
+                        // console.log(sT);
+                        window.scrollTo(0, sT);
+                    }
+                });
+            </script>
+        </nav>
+    </header>
+
+
+    <div class="main-page">
+
+        <section class="about">
+            <div class="about-left">
+                <img src="./static/images/IMG_0001.jpeg" alt="Picture" id="photo">
+                <h2>Bingzhao Shan</h2>
+                <img src="./static/images/Kai_strip.png" alt="Kai" id="kai">
+                <a href="https://www.linkedin.com/in/bingzhao-shan-b6830b112/"> LinkedIn </a> |
+                <a href="mailto:shanbz@umich.edu"> Email </a> |
+                <a href="https://github.com/zuoyigehaobing"> Github </a> |
+                <a href="cv.html"> CV </a> |
+                <a href="#"> Google Scholar </a>
+            </div>
+
+            <div class="about-right">
+                <h2>About Me</h2>
+                <p> I'm a first-year MS student at the Computer Science and Engineer Department, the <a
+                        href="https://cse.engin.umich.edu/">University of
+                        Michigan</a> (GO BLUE!). Prior to that, I completed my bachelor's degree at the <a
+                        href="https://web.cs.toronto.edu/">University of Toronto </a>
+                    where I majored in computer science with a focus on computer vision. To better understand the
+                    underlying principles behind computer vision, I also took mathematics as a minor. After finishing
+                    my third year, I worked as a computer vision research intern in the interactive projector team at <a
+                        href="https://epson.ca/whitepaper-projection-mapping">Epson Canada</a> from Aug 2018 to Aug
+                    2019.
+                </p>
+                <p>I am interested in finding more interpretable computer vision models through a reasonable volume of
+                    training samples so that computers can observe and learn from the world in real-time, just like
+                    human beings.</p>
+            </div>
+        </section>
+
+        <section class="news" id="news">
+            <div class="container">
+                <hr>
+                <h4 class="sub-header">News</h4>
+                <ul>
+                    <!-- more news to be added here -->
+                    <li><span class="date">2020/08: </span> I started a new journey as an M.S. student at the University
+                        of Michigan.</li>
+                    <li><span class="date">2020/06: </span> I graduated from the University of Toronto!</li>
+                    <li><span class="date">2020/05: </span> One paper accepted by ICISDM 2020.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="publications" id="publications">
+            <div class="container">
+                <hr>
+                <h4 class="sub-header">Publications</h4>
+                <div class="publication-item">
+                    <img src="./static/images/publications/icisdm-2020.png" alt="publication image">
+                    <div class="publication-item-info">
+                        <p class="publication-item-title">Hybrid Unsupervised Scale-invariant Slide Detection (HUSSD)
+                            for Video Presentation</p>
+                        <p class="publication-item-authors"><span class="publication-item-bold">Bingzhao Shan</span>,
+                            Muhammad Rizwan Abid, Ehsan Amjadian</p>
+                        <p class="publication-item-conference">International Conference on Information System and Data
+                            Mining (<span class="publication-item-bold">ICISDM</span>), Hawaii, 2020</p>
+                        <div class="publication-item-details">
+                            <a href="http://www.icisdm.org/">[ICISDM]</a>
+                            <a href="https://dl.acm.org/doi/10.1145/3404663.3404674">[Paper]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+
+            <div class="container">
+                <hr>
+                <h4 class="sub-header">Projects (selected)</h4>
+                <div class="project-gallery">
+
+                    <div class="project-item">
+                        <p class="project-item-title">Computer Graphics – Ray Tracing</p>
+                        <img src="https://raw.githubusercontent.com/zuoyigehaobing/RayTracing/master/result/env.png"
+                            alt="project image">
+                        <div class="project-item-info">
+                            <p class="project-item-bio">Ray tracing algorithm inplemented in C++. Features include Phone
+                                Shading, hard/soft shadow, glossy reflection, refraction, texture/environment mapping
+                                and anti-aliasing.</p>
+                            <div class="project-item-details">
+                                <a href="https://github.com/zuoyigehaobing/RayTracing">[code]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <p class="project-item-title">Face Detector</p>
+                        <img src="./static/images/projects/face-detector.gif" alt="project image">
+                        <div class="project-item-info">
+                            <p class="project-item-bio">Face detection and gender classification using HoG and SVM.
+                                Implemented two shot-detection methods. Discussed and applied different trackers in the
+                                demo video.</p>
+                            <div class="project-item-details">
+                                <a href="https://github.com/zuoyigehaobing/Face_Detection">[code]</a>
+                                <a
+                                    href="https://github.com/zuoyigehaobing/Face_Detection/blob/master/REPORT.pdf">[doc]</a>
+                                <a href="https://www.youtube.com/watch?v=rlbbqeR-5RI&feature=youtu.be">[demo]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <p class="project-item-title">Gomoku-GameTreeSearch</p>
+                        <img src="https://raw.githubusercontent.com/zuoyigehaobing/Gomoku-GameTreeSearch/master/img/instruction2.png"
+                            alt="project image">
+                        <div class="project-item-info">
+                            <p class="project-item-bio">A player-against AI Gomoku board game implemented in Python with
+                                UI. The AI agent is implemented using game tree seaching algorithm (with heuristic and
+                                min-max-cut).</p>
+                            <div class="project-item-details">
+                                <a href="https://github.com/zuoyigehaobing/Gomoku-GameTreeSearch">[code]</a>
+                                <a
+                                    href="https://github.com/zuoyigehaobing/Gomoku-GameTreeSearch/blob/master/csc384-project.pdf">[doc]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="working" id="working">
+
+            <div class="container">
+                <hr>
+                <h4 class="sub-header">Working</h4>
+                <div class="working-item">
+                    <h4 class="working-item-title">Research Associate</h4>
+                    <div class="working-item-info">
+                        <p class="working-item-company"> Aggregate Intellect (AISC, Toronto, Canada) </p>
+                        <p class="working-item-date"> May 2019 - June 2020 </p>
+                    </div>
+                    <p>Topic: Screen detection and content matching in presentation videos.</p>
+                    <ul>
+                        <li>Explored approaches based on SIFT, SURF, and ORB.</li>
+                        <li>Developed a video annotation tool and the pipeline evaluation tool.</li>
+                        <li>Published a paper on ICISDM as the first author.</li>
+                    </ul>
+                </div>
+
+                <div class="working-item">
+                    <h4 class="working-item-title">Computer Vision Research Intern</h4>
+                    <div class="working-item-info">
+                        <p class="working-item-company"> Epson Canada Ltd. (Markham, Canada) </p>
+                        <p class="working-item-date"> Aug 2018 - Aug 2019 </p>
+                    </div>
+                    <p>Team: interactive projector team (IPR).</p>
+                    <ul>
+                        <li>Epson Spotlight Award.</li>
+                        <li>Presented to 50+ colleagues on Epson Monthly Meeting.</li>
+                        <li>Worked on human-fingertip segmentation.</li>
+                        <li>Trained new-networks using YOLO for fingertip detections.</li>
+                        <li>Responsibility: Other than fingertip segmentation, I also worked on several parts of the
+                            project including calibration, research analysis, tool development, and evaluation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="teaching" id="teaching">
+            <div class="container">
+                <hr>
+                <h4 class="sub-header">Teaching</h4>
+                <p>Teaching Assistant</p>
+                <ul>
+                    <li><span class="teaching-prefix">[University of Toronto, Winter 2020]</span> CSC321H5S:
+                        Introduction to Neural Networks and Machine Learning.</li>
+                    <li><span class="teaching-prefix">[University of Toronto, Winter 2020]</span> CSC148H1S:
+                        Introduction to Computer Science.</li>
+                </ul>
+                <p>Course Grader</p>
+                <ul>
+                    <li><span class="teaching-prefix">[University of Michigan, Fall 2020]</span> EECS492:
+                        Introduction to Artificial Intelligence.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="miscs" id="miscs">
+
+            <div class="container">
+                <hr>
+                <h4 class="sub-header">Miscs</h4>
+                <ul>
+                    <li>I like to travel to very different places, just as I like to meet different people :).</li>
+                    <li>I love ping-pong and have been playing it for years. Although not skilled, I would like to meed
+                        and play against pros.</li>
+                    <li>I will have a dog, sooner or later.</li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+
+
+</body>
+
+</html>

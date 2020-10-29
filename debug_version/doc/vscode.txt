@@ -1,0 +1,21 @@
+1. Open command palette
+    command + shift + P
+
+2. short cuts menu
+    search in command palette
+
+3. command + d after selection for identical selection
+
+4. auto format: shift + option + f
+
+5. shift between files
+    command + p
+
+6. shift between recent projects
+    control + r
+
+7. keyboard short cut references
+    help > keyboard short cut references
+
+8. block gradually selection
+    shift + control + command + <-/->

@@ -1,0 +1,59 @@
+relative to the viewport units (browser window): vw, vh, vmin, vmax
+relative to the font-size units: em, rem
+
+######################
+percentage works on width most of the time but sometimes fail on height
+
+--- use percentage on container to make it responsive.
+
+    the percentage is always relative to its parent default to 100% most of the time.
+    Some exceptions: 
+        * images are relative to the actual size of themselves rather than the parent container. <Fix: make its width 100% in a container>
+        * 
+
+--- use min-width to enforce the behavior on small divices (you can use max-width as well, but some computers have very high resolutions, contents may look very small on it.)
+
+
+######################
+default: if not specified, elements have the same font size inherited from their parent;
+
+em:  relative to their parent's font-size, default 16px; 
+    1em means identical as its parent's font size
+    1.5 means 150% of its parent's font-size;
+
+    * Warning: may cause h1-6 have different size if they are in different blocks. Also may have amplifier(i.e. cascading) effect if nested too may times.
+    * Warning: em will be relative to it's own font size if used in paddings or margins
+    * Best practices: use rem (root em)
+
+rem: relative to the root element, better to set the font size in the html element
+
+* Rule of thumb:
+    - use rem for font size
+    - use em for padding and margin
+    - use em or percentage for width
+
+######################
+display: flex (Need to be applied on the outer container), justify-contents, align-items comes with flex;
+
+    children changed from vertically stacked blocks to horizontally aligned blocks when flex is applied to a parent container. 
+
+    this is more convenient compared to blcok of float in terms of responsive design. the flow is inline-block but will adjust the size automatically based on how many contents on the row, has the risk of overflow outside the window automatically.
+
+    justify-contents: space-between --> moves the spaces in both sides of a flex block and partition in between (need to be applied to parent, again)
+                      space-around --> doubled partitions;
+                      center --> centers all the flex boxes inside it
+                      flex-start ---> align from the start
+                      flex-end ---> align from th end
+                      * note: if width add up to 100%, no space will be placed
+    
+    align-items:    stretch -> default, all flow boxes is aligned vertically
+                    *note: controlles alignment vertically if flex-direction is row, horitontally if column
+
+    
+    flex-direction:   row -> default;
+                      column -> as block, can be used to make it fully responsive on small divices.
+
+
+
+######################
+text-align: center   ---> centers text within it's parent.
