@@ -22,7 +22,7 @@
         <!-- <div class="navi-logo">
             <a href="#"><img src="static/images/icon.png" alt="Umich" id="NaviLogo">Shan</a>
         </div> -->
-        <nav>
+        <nav id="navi">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#news">News</a></li>
@@ -35,10 +35,10 @@
                 $("nav a").on('click', function (event) {
                     event.preventDefault();
 
-                    if ($(this).attr("href") === "#"){
+                    if ($(this).attr("href") === "#") {
                         window.scrollTo(0, 0);
-                    }else{
-                        var o =  $( $(this).attr("href") ).offset();
+                    } else {
+                        var o = $($(this).attr("href")).offset();
                         var sT = o.top - $(".navbar").outerHeight(true); // get the fixedbar height
                         // compute the correct offset and scroll to it.
                         // console.log(sT);
@@ -47,6 +47,23 @@
                 });
             </script>
         </nav>
+
+        <div class="menu_bar" onclick="menuClick(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <script>
+            function menuClick(x) {
+                if (!x.classList.value.includes("show")){
+                    document.getElementById("navi").style.display = "flex";
+                }else{
+                    document.getElementById("navi").style.display = "none";
+                }
+                x.classList.toggle("show");
+            }
+        </script>
     </header>
 
 

@@ -1,10 +1,10 @@
 
 html {font-size: 16px; scroll-behavior: smooth;}
-body { margin: 0; padding: 0; background-color: rgb(225, 225, 225);}
+body { margin: 0; padding: 0; background-color: rgb(225, 225, 225); min-width: 400px;}
 ul {margin: 0;}
 
 /******* inside the navigation bar *******/
-header { width:100%; margin: 0; padding: 0; height: 4rem; background-color: #333; display: flex; align-items: left; justify-content: space-between;/* border: 2px solid pink; */ position: fixed; top: 0;}
+header { width:100%; margin: 0; padding: 0; height: 4rem; background-color: #333; display: flex; align-items: left; justify-content: space-between;/* border: 2px solid pink; */ position: fixed; top: 0; }
 .navi-logo{width: 20%;margin: 0;padding: 0; margin-left: 15%;}
 .navi-logo a{text-decoration: none;color: white; font-family: 'Permanent Marker', cursive; font-size: 2rem;}
 header img{height: 100%;/* vertically align the text next to it */vertical-align:middle;}
@@ -15,6 +15,14 @@ nav a{color: white;text-align: center; text-decoration: none;}
 nav a::before{content: '';display: block;height: 2px;width: 0%;background-color:white;top: 0;transition: all ease-in-out 250ms;}
 nav a:hover::before {width: 100%;}
 #NaviLogo{/*To make Safari happy*/width: 4rem; margin-right: 0.3rem;}
+
+.menu_bar{margin-right: 10%;display: none;}
+.bar1, .bar2, .bar3 {width: 2rem;height: 5px;background-color: white;margin: 6px auto;transition: 0.4s;color: white;}
+.show .bar1 {-webkit-transform: rotate(-45deg) translate(-9px, 6px);transform: rotate(-45deg) translate(-9px, 6px);}
+.show .bar2 {opacity: 0;}
+.show .bar3 {-webkit-transform: rotate(45deg) translate(-8px, -8px);transform: rotate(45deg) translate(-8px, -8px);}
+
+
 
 /******* the main page section *******/
 .main-page {background-color: white;width: 65%; margin: auto;margin-top: 8rem;margin-bottom: 8rem;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-bottom: 3rem; /*for now, will fix to make if fully responsive*/ /*max-width: 65rem; min-width: 50rem;*/}
@@ -95,47 +103,57 @@ hr {height:1px;width: 100%;border-width:0;color:gray;background-color:rgb(129, 2
 
 
 /* media query */
-@media screen and (max-width: 800px){
-    .main-page{
-        min-width: 30rem;
-    }
-    .about{flex-direction: column; align-items: center;}
-    .about-left{width: 100%;text-align: center;margin-bottom: 0.5rem; margin-left: 0%;}
-    .about-right{width: 100%;}
-    .about-right h2{margin-top: 5%;text-align: center;}
-
-    .publication-item {margin: 0.3rem;}
-    .publication-item img{width: 0%; display: none; margin: 0;}
-    .publication-item-info{width: 100%; margin: 0; justify-content: flex-start; padding: 0;}
-    .publication-item-info p{margin: 0; padding: 0;}
-
-    .project-gallery{flex-direction: column;}
-    .project-item{width: 80%;}
-}
-
 
 @media screen and (max-width: 1200px){
-    .main-page{
-        min-width: 30rem;
-    }
 
+    .menu_bar{display: block;margin: auto 0rem; width: 30%;}
+    .navi-logo{width: 40%;}
+    
+    nav{width: 30%;margin-right: 0%;background-color: #333;margin-top: 0;align-items: flex-start;position: absolute;top: 4rem;right: 0;display: none;}
+    nav ul{display: flex; flex-direction: column; max-height: 70vh; margin: 0; padding: 0; background-color: #333;}
+    nav li{margin: 1rem 0;text-align: center;}
+    
+    
+    .main-page{min-width: 30rem;}
     .about{flex-direction: column; align-items: center;}
     .about-left{width: 100%;text-align: center;margin-bottom: 0.5rem; margin-left: 0%; margin-top: 0;}
     #kai{width: 20%;}
     .about-right{width: 100%; margin-top: 0;}
     .about-right h2{margin-top: 5%;text-align: center;}
-
     .project-gallery{flex-direction: column;}
     .project-item{width: 80%; max-width: 20rem;}
 }
 
 
+@media screen and (max-width: 800px){
+    .main-page{min-width: 30rem;}
+    .about{flex-direction: column; align-items: center;}
+    .about-left{width: 100%;text-align: center;margin-bottom: 0.5rem; margin-left: 0%;}
+    .about-right{width: 100%;}
+    .about-right h2{margin-top: 5%;text-align: center;}
+    .publication-item {margin: 0.3rem;}
+    .publication-item img{width: 0%; display: none; margin: 0;}
+    .publication-item-info{width: 100%; margin: 0; justify-content: flex-start; padding: 0;}
+    .publication-item-info p{margin: 0; padding: 0;}
+    .project-gallery{flex-direction: column;}
+    .project-item{width: 80%;}
+}
+
+
+@media screen and (max-width: 400px){
+    .navi-logo span{display: none;}
+}
+
+
 /******* Debug Border Section *******/
 /* .navi-logo{border: 2px solid red;}
-nav {border: 2px solid blue;}
+nav {border: 4px solid blue;}
 nav ul{border: 2px solid red;}
-nav li{border: 2px solid yellow}
-section {border: 3px solid blue;}
+nav li{border: 2px solid yellow} */
+
+
+
+/* section {border: 3px solid blue;}
 .about img{border: 2px solid red;}
 .about-left{border: 2px solid yellow;}
 .about-left h2{border: 2px solid blue;}
