@@ -17,7 +17,7 @@ nav a:hover::before {width: 100%;}
 #NaviLogo{/*To make Safari happy*/width: 4rem; margin-right: 0.3rem;}
 
 /******* the main page section *******/
-.main-page {background-color: white;width: 65%; margin: auto;margin-top: 8rem;margin-bottom: 8rem;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-bottom: 3rem; /*for now, will fix to make if fully responsive*/ max-width: 65rem; min-width: 50rem;}
+.main-page {background-color: white;width: 65%; margin: auto;margin-top: 8rem;margin-bottom: 8rem;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-bottom: 3rem; /*for now, will fix to make if fully responsive*/ /*max-width: 65rem; min-width: 50rem;*/}
 section{width: 100%;margin-bottom: 3rem;}
 hr {height:1px;width: 100%;border-width:0;color:gray;background-color:rgb(129, 2, 2);}
 .container {margin: 2rem;}
@@ -95,10 +95,35 @@ hr {height:1px;width: 100%;border-width:0;color:gray;background-color:rgb(129, 2
 
 
 /* media query */
-@media screen and (max-width: 500px){
-    body {
-        
+@media screen and (max-width: 800px){
+    .main-page{
+        min-width: 30rem;
     }
+    .about{flex-direction: column; align-items: center;}
+    .about-left{width: 100%;text-align: center;margin-bottom: 0.5rem; margin-left: 0%;}
+    .about-right{width: 100%;}
+
+    .publication-item {margin: 0.3rem;}
+    .publication-item img{width: 0%; display: none; margin: 0;}
+    .publication-item-info{width: 100%; margin: 0; justify-content: flex-start; padding: 0;}
+    .publication-item-info p{margin: 0; padding: 0;}
+
+    .project-gallery{flex-direction: column;}
+    .project-item{width: 80%;}
+}
+
+
+@media screen and (max-width: 1200px){
+    .main-page{
+        min-width: 30rem;
+    }
+
+    .about{flex-direction: column; align-items: center;}
+    .about-left{width: 100%;text-align: center;margin-bottom: 0.5rem; margin-left: 0%;}
+    .about-right{width: 100%;}
+    
+    .project-gallery{flex-direction: column;}
+    .project-item{width: 80%; max-width: 20rem;}
 }
 
 
@@ -106,8 +131,8 @@ hr {height:1px;width: 100%;border-width:0;color:gray;background-color:rgb(129, 2
 /* .navi-logo{border: 2px solid red;}
 nav {border: 2px solid blue;}
 nav ul{border: 2px solid red;}
-nav li{border: 2px solid yellow}
-section {border: 3px solid blue;}
+nav li{border: 2px solid yellow} */
+/* section {border: 3px solid blue;}
 .about img{border: 2px solid red;}
 .about-left{border: 2px solid yellow;}
 .about-left h2{border: 2px solid blue;}
